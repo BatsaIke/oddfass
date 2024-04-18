@@ -62,8 +62,7 @@ const CategoriesSidebar = ({
           <select className={styles.sortSelect} onChange={handleSortChangeInternal}>
             <option value="createdAt_desc">Newest</option>
             <option value="createdAt_asc">Oldest</option>
-            <option value="price_asc">Price Low to High</option>
-            <option value="price_desc">Price High to Low</option>
+            
           </select>
         </div>
       </aside>
