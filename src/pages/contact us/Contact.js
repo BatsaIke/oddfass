@@ -17,15 +17,21 @@ const ContactPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Here, handle the form submission (e.g., send data to a server)
         console.log(formData);
-        setIsModalOpen(true); // Open the modal after form submission
+        setIsModalOpen(true);
     };
 
     return (
         <div className={styles.contactPage}>
             <h1>Contact Us</h1>
             <p>Have a question or feedback? Fill in the form below and we will get back to you shortly.</p>
+            
+            {/* Display contact details */}
+            <div className={styles.contactDetails}>
+                <p><strong>Location:</strong> Spintex Number 1, Accra, Ghana</p>
+                <p><strong>Phone Numbers:</strong> +233 20 123 4567, +233 20 765 4321</p>
+            </div>
+
             <form onSubmit={handleSubmit} className={styles.contactForm}>
                 <input
                     type="text"
@@ -33,7 +39,6 @@ const ContactPage = () => {
                     placeholder="Number to call you"
                     value={formData.contactNumber}
                     onChange={handleChange}
-                   
                 />
                 <input
                     type="email"
@@ -41,7 +46,6 @@ const ContactPage = () => {
                     placeholder="Your Email"
                     value={formData.email}
                     onChange={handleChange}
-                   
                 />
                 <textarea
                     name="feedback"
@@ -60,7 +64,7 @@ const ContactPage = () => {
                 <button type="submit">Submit</button>
             </form>
 
-            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} header="Concact submission">
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} header="Contact Submission">
                 Submission successful, we'll get back to you shortly.
             </Modal>
         </div>
