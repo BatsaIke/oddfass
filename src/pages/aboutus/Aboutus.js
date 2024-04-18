@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './AboutUsPage.module.css'; // Assume you have CSS module for styling
-import logo from '../../images/log.webp'; // Path to the generated logo image
+import logo from '../../images/log.webp'; // Path to your logo image
 
 const AboutUsPage = () => {
     const smartHomeImage = "https://images.samsung.com/is/image/samsung/assets/us/home-appliances/mlps/03212024/03/01_DT.jpg?$720_N_JPG$";
@@ -16,6 +16,10 @@ const AboutUsPage = () => {
                 <h2>About Our Company</h2>
                 <p>Founded on the principles of innovation and excellence, ODDFAS LTD is dedicated to revolutionizing how technology is used at home. We blend cutting-edge technology with everyday functionality to create smart home solutions that are not only sophisticated but also intuitive to use. Our systems, ranging from smart lighting to advanced security, integrate seamlessly into daily life, enhancing convenience and energy efficiency. Our latest innovation includes a smart fridge that not only keeps your food fresh but also tracks your groceries and automatically orders refills when supplies run low, ensuring you never run out of your essentials.</p>
                 <img src={smartHomeImage} alt="Smart Home Technology" className={styles.featuredImage}/>
+            </section>
+            <section className={styles.services}>
+                <h2>Our Services</h2>
+                <p>We provide comprehensive in-home installation and monitoring services for all your smart gadgets. Our team of experts will not only help you set up your devices but will also ensure they are optimized for your living space. Whether it’s installing a new smart security system or integrating smart appliances, we manage all aspects of setup and configuration. Plus, our ongoing monitoring services ensure that your devices are always functioning optimally, with real-time support available to address any issues.</p>
             </section>
             <section className={styles.missionStatement}>
                 <h2>Our Mission</h2>
