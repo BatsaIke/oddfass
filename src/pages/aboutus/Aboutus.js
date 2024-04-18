@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './AboutUsPage.module.css'; // Assume you have CSS module for styling
 import logo from '../../images/log.webp'; // Path to your logo image
+import { FaToolbox } from 'react-icons/fa';
 
 const AboutUsPage = () => {
     const smartHomeImage = "https://images.samsung.com/is/image/samsung/assets/us/home-appliances/mlps/03212024/03/01_DT.jpg?$720_N_JPG$";
@@ -19,6 +20,7 @@ const AboutUsPage = () => {
             </section>
             <section className={styles.services}>
                 <h2>Our Services</h2>
+                <FaToolbox className={styles.serviceIcon}/> 
                 <p>We provide comprehensive in-home installation and monitoring services for all your smart gadgets. Our team of experts will not only help you set up your devices but will also ensure they are optimized for your living space. Whether it’s installing a new smart security system or integrating smart appliances, we manage all aspects of setup and configuration. Plus, our ongoing monitoring services ensure that your devices are always functioning optimally, with real-time support available to address any issues.</p>
             </section>
             <section className={styles.missionStatement}>

@@ -38,6 +38,11 @@
 .values li {
     margin-bottom: 10px;
 }
+.serviceIcon {
+    font-size: 24px; /* Icon size */
+    color: #007bff; /* Icon color, matching your brand color or button color */
+    margin-right: 8px; /* Spacing between icon and text */
+}
 
 @media (max-width: 768px) {
     .hero, .companyOverview, .missionStatement, .values {
