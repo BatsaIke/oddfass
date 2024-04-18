@@ -1,0 +1,60 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.logo {
+    width: 100%;
+    max-width: 200px; /* Ensures the logo is not too large on any device */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.companyOverview, .missionStatement, .values {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.featuredImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.values ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.values li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .hero, .companyOverview, .missionStatement, .values {
+        padding: 20px 10px;
+    }
+
+    .logo {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 20px 10px;
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+}
