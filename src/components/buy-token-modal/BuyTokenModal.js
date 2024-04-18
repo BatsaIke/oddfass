@@ -1,15 +1,13 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import styles from "./BuyTokenModal.module.css"; // Ensure this path is correct
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { makePayment } from "../../actions/paymentActions";
+import { Link, Navigate } from "react-router-dom";
+import styles from "./BuyTokenModal.module.css"; // Ensure this path is correct
 
 export const BuyTokenModal = ({ email }) => {
-  const dispatch = useDispatch();
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const totalAmount = useSelector((state) => state.cart.totalPrice);
+  const totalAmount = 100; // Assuming a fixed amount for simplicity or fetch from context/store
 
-  const doubledAmount = totalAmount ? (parseFloat(totalAmount) * 1.0).toFixed(1) : null;
+  const [isPaymentSuccessful, setPaymentSuccessful] = useState(false);
 
   const onFormSubmit = (data) => {
     if (!totalAmount) {
@@ -17,13 +15,8 @@ export const BuyTokenModal = ({ email }) => {
       return;
     }
 
-    const paymentData = {
-      paymentMethod: data.paymentMethod,
-      amount: totalAmount,
-      email,
-    };
-
-    dispatch(makePayment(paymentData));
+    console.log("Payment Successful for", totalAmount, "using", data.paymentMethod);
+    setPaymentSuccessful(true); // Simulate payment success
   };
 
   return (
@@ -33,9 +26,7 @@ export const BuyTokenModal = ({ email }) => {
           <label htmlFor="paymentMethod">Select Payment Method:</label>
           <select
             id="paymentMethod"
-            {...register("paymentMethod", {
-              required: "Payment method is required"
-            })}
+            {...register("paymentMethod", { required: "Payment method is required" })}
             className={styles.selectInput}
           >
             <option value="">Select payment method</option>
@@ -45,16 +36,19 @@ export const BuyTokenModal = ({ email }) => {
           {errors.paymentMethod && <p className={styles.error}>{errors.paymentMethod.message}</p>}
         </div>
 
-        {doubledAmount && (
-          <p className={styles.tokenEquivalent}>
-            <strong>{doubledAmount} Tks</strong> = ₵{totalAmount}
-          </p>
-        )}
-
         <button type="submit" className={styles.buyNowButton}>
           Pay Now
         </button>
       </form>
+
+      {isPaymentSuccessful && (
+        <>
+          <div className={styles.successMessage}>
+            <p>Payment successful!</p>
+          </div>
+          <Link to={"/"}>Go back</Link>
+        </>
+      )}
     </div>
   );
 };

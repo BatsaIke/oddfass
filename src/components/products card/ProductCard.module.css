@@ -25,7 +25,7 @@
 
 .image {
   width: 100%; /* Ensure image fills container */
-  height: 270px; /* Fixed height for all images */
+  height: 250px; /* Fixed height for all images */
   object-fit: contain; /* Cover container while preserving aspect ratio */
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -39,14 +39,16 @@
   padding: 15px;
 }
 
-h3 {
-  margin: 0.5em 0;
+.details h3 {
+  margin-top: 0.5em; /* Increased top margin */
+  margin-bottom: 0.75em; /* Increased bottom margin to create more space between heading and paragraph */
   font-size: 1.1rem;
   color: #333333;
 }
 
-p {
-  margin: 0.25em 0;
+.details p {
+  margin-top: 0.25em; /* Slight top margin to add space above each paragraph */
+  margin-bottom: 0.5em; /* Increased bottom margin to separate paragraphs from each other or from the button below */
   font-size: 0.9rem;
   color: #666666;
 }
