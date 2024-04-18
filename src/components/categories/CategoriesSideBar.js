@@ -6,10 +6,8 @@ const CategoriesSidebar = ({
   categories = [],
   onCategorySelect = () => {},
   onSortChange = () => {},
-  onPriceFilterChange = () => {},
 }) => {
   const [isActive, setIsActive] = useState(false);
-  const [priceRange, setPriceRange] = useState("");
 
   useEffect(() => {
     const handleResize = () => {
@@ -32,11 +30,6 @@ const CategoriesSidebar = ({
 
   const handleSortChangeInternal = (e) => {
     onSortChange(e.target.value);
-  };
-
-  const handlePriceChange = (e) => {
-    setPriceRange(e.target.value);
-    onPriceFilterChange(e.target.value);
   };
 
   return (
@@ -72,18 +65,6 @@ const CategoriesSidebar = ({
             <option value="price_asc">Price Low to High</option>
             <option value="price_desc">Price High to Low</option>
           </select>
-        </div>
-        <div className={styles.filterSection}>
-          <div className={styles.filterTitle}>Price Range</div>
-          <input
-            type="range"
-            className={styles.priceRangeInput}
-            value={priceRange}
-            onChange={handlePriceChange}
-            min="0"
-            max="500"
-          />
-          <div>Up to ₵{priceRange}</div>
         </div>
       </aside>
     </>
