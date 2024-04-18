@@ -1,0 +1,36 @@
+.servicesContainer {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.servicesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.serviceItem {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.serviceIcon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .servicesContainer {
+        padding: 10px;
+    }
+
+    .serviceIcon {
+        font-size: 30px;
+    }
+}

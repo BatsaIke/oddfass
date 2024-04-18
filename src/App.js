@@ -24,6 +24,8 @@ import PrivateRoute from './components/PrivateRoute';
 import AboutUsPage from './pages/aboutus/Aboutus';
 import ProductDetails from './pages/productdetails/ProductDetails';
 import GroceriesPage from './pages/groceries/GroceriesPage';
+import ServicesPage from './pages/services/Service';
+
 
 
 
@@ -57,6 +59,7 @@ function App() {
         <Route path="/aboutus" element={<AboutUsPage />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/groceries" element={<GroceriesPage />} />
+        <Route path="/service" element={<ServicesPage/>} />
 
 
         {/* <Route path="/admin/addproducts" element={<AddProductForm/>} />
